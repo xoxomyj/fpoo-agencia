@@ -8,6 +8,11 @@ public class Conta {
     boolean validaSaldo;
 
     private int numeroConta;
+
+    private double valor = 0;
+
+    private double transfere;
+
     private double saldo = 0;
     private String agencia = "000-35-XX";
 
@@ -67,11 +72,18 @@ public class Conta {
         System.out.println("Seu saldo é: " + this.saldo);
     }
 
-    public void avaliaSaque(double valor) {
+    public void avaliaSaque(Double valor) {
         if (valor > this.saldo) {
             validaSaldo = false;
         } else {
             validaSaldo = true;
         }
     }
+
+    public void contaTransferencia(Conta contaRemetente, Conta contaDestinatario) {
+        contaRemetente.saldo = contaDestinatario.saldo - valor;
+        contaDestinatario.saldo = contaRemetente.saldo + valor;
+
+    }
 }
+
