@@ -15,22 +15,22 @@ public class Conta {
 
     List<Conta> listConta = new ArrayList<>();
 
-    public void adicionarContaList(Conta conta){
+    public void adicionarContaList(Conta conta) {
         listConta.add(conta);
     }
 
-    public Conta pesquisarConta(long cpf){
-        for (Conta conta: listConta) {
+    public Conta pesquisarConta(long cpf) {
+        for (Conta conta : listConta) {
             long validaCpf = conta.cliente.getCpf();
-            if (validaCpf == cpf){
+            if (validaCpf == cpf) {
                 return conta;
             }
         }
         return null;
     }
 
-    public void gerarConta(Cliente cliente){
-        numeroConta = (int) (Math.random()*10000);
+    public void gerarConta(Cliente cliente) {
+        numeroConta = (int) (Math.random() * 10000);
         this.cliente = cliente;
     }
 
@@ -43,8 +43,7 @@ public class Conta {
     }
 
 
-
-    public void olaMariana(){
+    public void olaMariana() {
         System.out.println("OI MARIANA");
 
     }
